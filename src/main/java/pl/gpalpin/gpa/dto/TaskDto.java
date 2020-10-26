@@ -10,6 +10,15 @@ public class TaskDto {
 
 	private Long id;
 	private String name;
-	private int price;
+	private Long price;
     private Long offerId;
+	public TaskDto(String name, Long price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
+    
+    
+	   
+    
 }

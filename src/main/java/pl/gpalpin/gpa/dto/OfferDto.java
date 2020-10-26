@@ -18,4 +18,6 @@ public class OfferDto {
 	private String validFor;
 	private String durationOfWork;
 //	private List<BufferedImage> photos;
+	
+
 }

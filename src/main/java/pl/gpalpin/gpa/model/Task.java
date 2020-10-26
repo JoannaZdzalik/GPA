@@ -25,4 +25,5 @@ public class Task implements Serializable {
     @ManyToOne
     @JoinColumn(name = "offer_id")
     private Offer offer;
+    
 }
