@@ -1,0 +1,97 @@
+body {
+background-color:#bfbfbf;
+font-family: 'Open Sans', sans-serif;
+}
+
+table.table-bordered > thead > tr > th{
+  border:1px solid #ffc200;
+}
+
+table.table-bordered > tbody > tr > td{
+  border:1px solid #ffc200;
+}
+
+
+.GPAbackground {
+background-color: #121824;
+color: #ffc200;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.lightgrey {
+  color: #757575
+}
+
+.linkToForm {
+  opacity: 0.5;
+}
+
+.linkToForm:hover {
+  opacity: 1.0;
+}
+
+.copyrightFooter {
+background-color: #192131;
+color: #757575;
+}
+
+.detailsFooter {
+background-color: #121824;
+color: #ffc200;
+font-family: 'Open Sans', sans-serif;
+font-size: 100%;
+font-weight: bold;
+text-align: center;
+padding: 20px;
+}
+
+img.gradient{
+    mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, #121824 15%);
+   -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%,#121824 15%);
+}
+
+.card {
+background-color: #121824;
+color: #ffc200;
+}
+
+.header {
+  overflow: hidden;
+}
+
+.row.text-over-image {
+  width: 200%;
+}
+
+.text {
+  transform: translateX(-100%);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  font-weight: bold;
+  color: #ffc200;
+  letter-spacing: 1px;
+  position: relative;
+  top: 50px;
+  left: 39%;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+

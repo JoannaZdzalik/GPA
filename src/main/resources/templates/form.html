@@ -1,0 +1,126 @@
+<!doctype html>
+
+<html lang ="en">
+<head>
+<meta charset="utf-8">
+<title>Grupa Przedsiębiorstw Alpinistycznych </title>
+<meta name="author" content = "Joanna Zdżalik">
+<meta name="description" content = "GPA">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../static/css/form.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<body>
+
+<div class="container formBox">
+
+<form>
+	<h3>Tworzenie oferty</h3>
+	
+	<!--Tytuł -->
+	<div class="d-flex flex-row justify-content-center">
+		<div class="form-group col-md-8 mb-20">
+			<label for="title">Tytuł oferty: </label>
+            <input type="text" id="title" class="form-control" placeholder="Wprowadź tytuł...">
+        </div>
+	</div>
+
+	<!-- Zakres prac-->
+	<div class="d-flex flex-row justify-content-center mt-20">
+		<div class="form-group col-8 mb-20">
+			<label for="price">Wyceniony zakres prac: </label>	
+			<textarea class="form-control mb-1" rows="1" placeholder="Wprowadź pozycję..."></textarea>
+            <div class="input-group col-14">
+				<input type="number" class="form-control" placeholder="Wprowadź cenę..." />
+				<button type="button" class="btn GPAbutton">Dodaj</button>
+			</div>
+        </div>	
+	</div>
+	
+	<!-- Tabela z wypunktowanym zakresem-->
+		<div class="d-flex flex-row justify-content-center ">
+				<table class="table table-sm" id="scopeOfWork">
+                <tbody>
+                <tr>
+                    <td class="col-8">adin. konsultacja z Nikodemem</td>
+					<td class="col-2">500 zł</td>
+                    <td class="col-1">
+                        <button type="button" class="btn blue"><span class="material-icons">edit</span></button>
+                    </td>
+					 <td class="col-1">
+                        <button type="button" class="btn red"><span class="material-icons">close</span></button>
+                    </td>
+                </tr>
+				<tr>
+                    <td class="col-9">DWA. ogarnięcie tego totalnego syfu</td>
+					<td class="col-2">25 000 zł</td>
+                    <td class="col-1">
+                        <button type="button" class="btn blue"><span class="material-icons">edit</span></button>
+                    </td> 
+					<td class="col-1">
+                        <button type="button" class="btn red"><span class="material-icons">close</span></button>
+                    </td>
+                </tr>
+                </tbody>
+				<caption>Całkowity koszt usługi: </caption>
+            </table>
+			
+		</div>
+	
+	<!-- VAT-->
+	<div class="d-flex flex-row justify-content-center">
+		<div class="form-group col-md-8">
+			<label for="vat">VAT [%]: </label>
+            <input type="number" id="vat" class="form-control">
+        </div>
+	</div>
+	
+	
+	<!-- Szacowany czas prac-->
+	<div class="d-flex flex-row justify-content-center ">
+		<div class="form-group col-md-8 mb-20">
+			<label for="duration">Szacowany czas prac: </label>
+            <input type="text" id="duration" class="form-control" >
+			 <small class="form-text text-muted">Np. 6 dni roboczych</small>
+        </div>
+	</div>
+	
+	<!-- Oferta ważna przez-->
+	<div class="d-flex flex-row justify-content-center">
+		<div class="form-group col-md-8 mb-20">
+			<label for="validity">Oferta ważna przez: </label>
+            <input type="text" id="validity" class="form-control" value="6 miesięcy">
+        </div>
+	</div>
+	
+	<!--Dodatkowe informacje -->
+	<div class="d-flex flex-row justify-content-center">
+		<div class="form-group col-8 mb-20">
+			<label for="price">Dodatkowe informacje: </label>	
+			<textarea class="form-control mb-1" rows="5">Prace będą wykonywane przy wykorzystaniu technik alpinistycznych. Narzędzia oraz materiały do prowadzenia prac są po stronie wykonawcy. Zleceniodawca jest zobowiązany do zapewnienia dostępu do dachu (wyłaz), wody oraz energii elektrycznej (gniazdko 230 V)w trakcie wykonywania prac. Czas prowadzenia prac na obiekcie szacuje się na 6 dni roboczych. Oferta jest ważna przez 6 miesięcy.</textarea>
+        </div>	
+	</div>
+	
+	<!--Załączniki -->
+	<div class="d-flex flex-row justify-content-center mt-20">
+		<div class="form-group col-8 mb-20">
+			<label for="file">Załącz zdjęcie</label>
+			<input type="file" multiple="multiple" accept="" class="form-control-file" id="file">
+        </div>	
+	</div>
+	
+	<!-- Przyciski na dole -->
+	 <div class="d-flex flex-row justify-content-center mt-20 mb-20" >
+        <button type="submit" class="btn GPAbutton"> Zapisz i wyślij </button>
+		<a class="btn GPAbutton" href="main.html" role="button">Powrót</a>
+    </div>
+</form>
+</div>
+
+</body>
+</html>

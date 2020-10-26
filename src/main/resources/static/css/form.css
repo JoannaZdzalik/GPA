@@ -1,0 +1,74 @@
+body {
+background-color:#bfbfbf;
+font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.formBox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: #D3D3D3  solid;
+    background-color: #f9f9f9;
+
+}
+
+.GPAbutton {
+	background-color: #121824;
+	color: #ffc200;
+	margin-left:5px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-1 {
+	margin-bottom: 1px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.red {
+    color: #d13a3a;
+}
+
+.blue {
+    color: #4682B4;
+}
+
+#scopeOfWork {
+    border: 1px #D3D3D3  solid;
+    background-color: #f2f2f2;
+	width: 55%; 
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
