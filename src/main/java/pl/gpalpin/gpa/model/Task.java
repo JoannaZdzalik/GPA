@@ -20,7 +20,7 @@ public class Task implements Serializable {
 	@Column(nullable= false)
 	private String name;
 
-	private int price;
+	private long price;
 	
     @ManyToOne
     @JoinColumn(name = "offer_id")
