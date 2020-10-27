@@ -2,9 +2,10 @@ package pl.gpalpin.gpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class GpaApplication {
+public class GpaApplication extends SpringBootServletInitializer {
 
 	
 	public static void main(String[] args) {

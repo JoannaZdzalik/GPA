@@ -1,7 +1,6 @@
 package pl.gpalpin.gpa.service;
 
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import pl.gpalpin.gpa.dto.OfferDto;
@@ -23,21 +22,16 @@ public class OfferService implements OfferServiceInterface{
     
     public Offer createOffer(OfferDto offerDto, List<TaskDto> taskDtos) {
     	Offer offer = mapper.map(offerDto, Offer.class);
-    	offer.setTitle("Oferta na wymianę ław kominiarskich");
-    	offer.setValidFor("6 miesięcy");
-    	offer.setAdditionalInfo("additionalInfo");
-    	offer.setDurationOfWork("10 dni roboczych");
     	offer.setScopeOfWork(mapTaskDtosToTasks(taskDtos, offer));
     //	offer.setScopeOfWork(mapList(taskDtos));
     	offer.setTotalCost(calculateTotalCost(taskDtos));
     	validateOffer(offerDto);
-    	//offerRepository.save(offer);
-    	System.out.println("Oferta utworzona: " + offer.getTitle());
+    	offerRepository.save(offer);
     	return offer;
     }
     
     public void validateOffer(OfferDto offerDto) {
-    	System.out.println("Here I will make validation");
+    	//validation here
     }
     
     public List<Task> mapTaskDtosToTasks(List<TaskDto> taskDtos, Offer offer){
@@ -53,17 +47,10 @@ public class OfferService implements OfferServiceInterface{
     }
     
     public Long calculateTotalCost(List<TaskDto> taskDtos) {
-    	TaskDto task1 = new TaskDto("jeden", 2000L);
-    	TaskDto task2 = new TaskDto("fgh", 3000L);
-    	TaskDto task3 = new TaskDto("erty", 70L);
-    	taskDtos.add(task1);
-    	taskDtos.add(task2);
-    	taskDtos.add(task3);
     	Long sum = 0L;
      	for (TaskDto taskDto : taskDtos) {
      		sum += taskDto.getPrice();
     	}
-     	System.out.println("Calkowity koszt to: " + sum + " PLN");
     	return sum;
     }
     
