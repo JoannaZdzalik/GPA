@@ -13,7 +13,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="../static/css/form.css"
+<link rel="stylesheet" type="text/css"
 	th:href="@{/css/form.css}">
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext'
@@ -55,7 +55,7 @@
 						placeholder="Wprowadź pozycję..."></textarea>
 					<div class="input-group col-14">
 						<input type="number" class="form-control"
-							placeholder="Wprowadź cenę..." />
+							placeholder="Wprowadź cenę [zł]..." />
 						<button type="button" class="btn GPAbutton">Dodaj</button>
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 			<!-- VAT-->
 			<div class="d-flex flex-row justify-content-center">
 				<div class="form-group col-md-8">
-					<label for="vat">VAT [%]: </label> <input type="number" id="vat"
+					<label for="vat">VAT [%]: </label> <input type="number" step=0.01 min=0 id="vat"
 						class="form-control" th:field="*{percentVAT}">
 				</div>
 			</div>
@@ -142,21 +142,15 @@
 						multiple="multiple" accept="" class="form-control-file" id="file">
 				</div>
 			</div>
-			<button type="submit" class="btn GPAbutton">Zapisz i wyślij</button>
+			<button type="submit" class="btn GPAbutton">Zapisz i wyślij nr 1</button>
 
-			<!-- Przyciski na dole 
+			<!-- Przyciski na dole -->
 			<div class="d-flex flex-row justify-content-center mt-20 mb-20">
-				<form action="/index">
-					<button type="submit" class="btn GPAbutton">Zapisz i
-						wyślij</button>
-				</form>
-				<form action="/index">
-					<button type="submit" class="btn btn-default GPAbutton">
+					<button type="submit" class="btn GPAbutton">Zapisz i wyślij</button>
+					<button type="button" class="btn btn-default GPAbutton" th:href="@{/index.html}">>
 						Powrót
 					</button>
-				</form> </div>
-
-		-->
+			 </div>
 		</div>
 
 	</form>
