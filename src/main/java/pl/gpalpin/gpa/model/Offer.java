@@ -28,7 +28,7 @@ public class Offer implements Serializable{
 	@Column(name="total_cost", nullable = false)
 	private Long totalCost;
 	
-	@Column(name="additional_info")
+	@Column(name="additional_info", columnDefinition="TEXT")
 	private String additionalInfo;
 	
 	@Column(name="valid_for")
@@ -36,6 +36,19 @@ public class Offer implements Serializable{
 	
 	@Column(name="duration")
 	private String durationOfWork;
+	
+	@Column(name="percentvat")
+	private double percentVAT;
+
+	
+	
+	public double getPercentVAT() {
+		return percentVAT;
+	}
+
+	public void setPercentVAT(double percentVAT) {
+		this.percentVAT = percentVAT;
+	}
 
 	public Long getId() {
 		return id;
@@ -94,7 +107,7 @@ public class Offer implements Serializable{
 	}
 
 	public Offer(String title, List<Task> scopeOfWork, Long totalCost, String additionalInfo, String validFor,
-			String durationOfWork) {
+			String durationOfWork, double percentVAT) {
 		super();
 		this.title = title;
 		this.scopeOfWork = scopeOfWork;
@@ -102,8 +115,13 @@ public class Offer implements Serializable{
 		this.additionalInfo = additionalInfo;
 		this.validFor = validFor;
 		this.durationOfWork = durationOfWork;
+		this.percentVAT = percentVAT;
 	}
-	
+
+	public Offer() {
+		super();
+	}
+
 //	private List<BufferedImage> photos;
 	
 	

@@ -49,12 +49,12 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.4.21.Final</version><!--$NO-MVN-MAN-VER$ -->
+			<version>5.4.21.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.4.21.Final</version><!--$NO-MVN-MAN-VER$ -->
+			<version>5.4.21.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -104,9 +104,9 @@
 				<configuration>
 					<url>http://localhost:8080/manager/text</url>
 					<server>TomcatServer</server>
-					<path>/gpa</path>
-					<username>manager</username>
-					<password>pwd</password>
+					<path>/gpa/</path>
+					<username>admin</username>
+					<password>password</password>
 				</configuration>
 			</plugin>
 		</plugins>

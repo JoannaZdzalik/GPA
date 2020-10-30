@@ -10,6 +10,7 @@ public class Email {
     private String sendTo;
     private String subject;
     private String body;
+    
 	public String getSendTo() {
 		return sendTo;
 	}

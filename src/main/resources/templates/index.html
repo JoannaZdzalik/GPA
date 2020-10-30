@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <title>Grupa Przedsiębiorstw Alpinistycznych</title>
@@ -10,10 +10,12 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext'
 	rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" th:href="@{images/favicons/favicon.ico}">
+<link rel="icon" sizes="16x16 32x32 64x64" th:href="@{images/favicons/favicon.ico}">
 </head>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -32,7 +34,8 @@
 	<div class="header">
 		<div class="row text-over-image">
 			<div class="col-6 image">
-				<img class="gradient" src="/images/main/header.jpg" width="120%" />
+				<img class="gradient" th:src="@{/images/main/header.jpg}"
+					src="/images/main/header.jpg" width="120%" />
 			</div>
 			<div class="col-6 text">
 				tel. 698 274 219 <br> krolewicz@gpalpin.pl <br>
@@ -46,16 +49,20 @@
 	<div id="slides" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="/images/main/slides/1.jpg" class="d-block w-100 gradient">
+				<img th:src="@{/images/main/slides/1.jpg}"
+					src="/images/main/slides/1.jpg" class="d-block w-100 gradient">
 			</div>
 			<div class="carousel-item">
-				<img src="/images/main/slides/2.jpg" class="d-block w-100 gradient">
+				<img th:src="@{/images/main/slides/2.jpg}"
+					src="/images/main/slides/2.jpg" class="d-block w-100 gradient">
 			</div>
 			<div class="carousel-item">
-				<img src="/images/main/slides/3.jpg" class="d-block w-100 gradient">
+				<img th:src="@{/images/main/slides/3.jpg}"
+					src="/images/main/slides/3.jpg" class="d-block w-100 gradient">
 			</div>
 			<div class="carousel-item">
-				<img src="/images/main/slides/4.jpg" class="d-block w-100 gradient">
+				<img th:src="@{/images/main/slides/4.jpg}"
+					src="/images/main/slides/4.jpg" class="d-block w-100 gradient">
 			</div>
 		</div>
 		<a class="carousel-control-prev" href="#slides" role="button"
@@ -459,7 +466,7 @@
 				<div class="card">
 					<div class="embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item autoplay loop controls muted"
-							src="/video/mlyny.mp4" type="video/mp4"></iframe>
+							th:src="@{/video/mlyny.mp4}" type="video/mp4"></iframe>
 					</div>
 					<div class="card-body">
 						<p class="card-text">Mlyny -- pomysl na podpis?</p>
@@ -470,7 +477,7 @@
 				<div class="card">
 					<div class="embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item autoplay loop controls muted"
-							src="/video/komory.mp4" type="video/mp4"></iframe>
+							th:src="@{/video/komory.mp4}" type="video/mp4"></iframe>
 					</div>
 					<div class="card-body">
 						<p class="card-text">Alpinistyczne czyszczenie instalacji
@@ -482,7 +489,7 @@
 				<div class="card">
 					<div class="embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item autoplay loop controls muted"
-							src="/video/mycie.mp4" type="video/mp4"></iframe>
+							th:src="@{/video/mycie.mp4}" type="video/mp4"></iframe>
 					</div>
 					<div class="card-body">
 						<p class="card-text">Mycie ciśnieniowe elewacji</p>
@@ -503,19 +510,12 @@
 		</div>
 	</div>
 
-
-
 	<div class="text-center py-2 copyrightFooter">
-		<form action="/form">
+		<form action="/gpa/form">
 			<button type="submit" class="btn btn-default linkToForm">
-				<img src="../static/images/main/logoSVG.svg" width="40" height="40">
-			</button>
+				<img th:src="@{/images/main/logoSVG.svg}" width="40" height="40">
+			</button> © 2020 Copyright: GPA
 		</form>
-		© 2020 Copyright: GPA
-		<a class="linkToForm" href="form.html">
-    <img src="../static/images/main/logoSVG.svg" width="40" height="40" align="center">
-  </a>
 	</div>
-
 </body>
 </html>

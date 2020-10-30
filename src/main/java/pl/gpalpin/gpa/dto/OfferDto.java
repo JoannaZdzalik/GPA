@@ -13,10 +13,23 @@ public class OfferDto {
 	private String additionalInfo;
 	private String validFor;
 	private String durationOfWork;
+	private double percentVAT;
 //	private List<BufferedImage> photos;
+	
+	
+	
 	public Long getId() {
 		return id;
 	}
+	public double getPercentVAT() {
+		return percentVAT;
+	}
+	public void setPercentVAT(double percentVAT) {
+		this.percentVAT = percentVAT;
+	}
+	public OfferDto() {
+	super();
+}
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -56,8 +69,8 @@ public class OfferDto {
 	public void setDurationOfWork(String durationOfWork) {
 		this.durationOfWork = durationOfWork;
 	}
-	public OfferDto(String title, List<Task> scopeOfWork, Long totalCost, String additionalInfo, String validFor,
-			String durationOfWork) {
+	public OfferDto(String title,List<Task> scopeOfWork, Long totalCost, String additionalInfo, String validFor,
+			String durationOfWork, double percentVAT) {
 		super();
 		this.title = title;
 		this.scopeOfWork = scopeOfWork;
@@ -65,6 +78,7 @@ public class OfferDto {
 		this.additionalInfo = additionalInfo;
 		this.validFor = validFor;
 		this.durationOfWork = durationOfWork;
+		this.percentVAT = percentVAT;
 	}
 	
 	

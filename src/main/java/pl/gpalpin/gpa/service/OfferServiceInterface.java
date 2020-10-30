@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface OfferServiceInterface {
 
-	Offer createOffer(OfferDto offerDto, List<TaskDto> taskDtos);
-	void validateOffer(OfferDto offerDto);
+	Offer addOffer(OfferDto offerDto, List<TaskDto> taskDtos);
+	boolean validateFields(OfferDto offerDto, List<TaskDto> tasksDto);
 	Long calculateTotalCost(List<TaskDto> taskDtos);
 	
 }
