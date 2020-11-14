@@ -1,6 +1,11 @@
 package pl.gpalpin.gpa.dto;
 
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TaskDto {
 
 	private Long id;
@@ -12,30 +17,6 @@ public class TaskDto {
 		super();
 		this.name = name;
 		this.price = price;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Long getPrice() {
-		return price;
-	}
-
-	public void setPrice(Long price) {
-		this.price = price;
-	}
-
-	public Long getOfferId() {
-		return offerId;
-	}
-
-	public void setOfferId(Long offerId) {
-		this.offerId = offerId;
 	}
 
 	public TaskDto(String name, Long price, Long offerId) {

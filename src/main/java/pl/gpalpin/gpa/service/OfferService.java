@@ -21,9 +21,6 @@ public class OfferService implements OfferServiceInterface {
 	private OfferRepository offerRepository;
 
 	public Offer addOffer(OfferDto offerDto, List<TaskDto> taskDtos) {
-//		if (!validateFields(offerDto, taskDtos)) {
-//			throw new IllegalArgumentException("Title of offer is not specified or list of tasks is empty!");
-//		}
 		Offer offer = mapper.map(offerDto, Offer.class);
 		offer.setScopeOfWork(mapTaskDtosToTasks(taskDtos, offer));
 		// offer.setScopeOfWork(mapList(taskDtos));

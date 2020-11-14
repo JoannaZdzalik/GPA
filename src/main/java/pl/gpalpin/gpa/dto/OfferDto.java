@@ -3,7 +3,12 @@ package pl.gpalpin.gpa.dto;
 import java.util.List;
 import pl.gpalpin.gpa.model.Task;
 
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class OfferDto {
 
 	private Long id;
@@ -17,58 +22,6 @@ public class OfferDto {
 //	private List<BufferedImage> photos;
 	
 	
-	
-	public Long getId() {
-		return id;
-	}
-	public double getPercentVAT() {
-		return percentVAT;
-	}
-	public void setPercentVAT(double percentVAT) {
-		this.percentVAT = percentVAT;
-	}
-	public OfferDto() {
-	super();
-}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public List<Task> getScopeOfWork() {
-		return scopeOfWork;
-	}
-	public void setScopeOfWork(List<Task> scopeOfWork) {
-		this.scopeOfWork = scopeOfWork;
-	}
-	public Long getTotalCost() {
-		return totalCost;
-	}
-	public void setTotalCost(Long totalCost) {
-		this.totalCost = totalCost;
-	}
-	public String getAdditionalInfo() {
-		return additionalInfo;
-	}
-	public void setAdditionalInfo(String additionalInfo) {
-		this.additionalInfo = additionalInfo;
-	}
-	public String getValidFor() {
-		return validFor;
-	}
-	public void setValidFor(String validFor) {
-		this.validFor = validFor;
-	}
-	public String getDurationOfWork() {
-		return durationOfWork;
-	}
-	public void setDurationOfWork(String durationOfWork) {
-		this.durationOfWork = durationOfWork;
-	}
 	public OfferDto(String title,List<Task> scopeOfWork, Long totalCost, String additionalInfo, String validFor,
 			String durationOfWork, double percentVAT) {
 		super();

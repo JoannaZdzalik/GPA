@@ -13,8 +13,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css"
-	th:href="@{/css/form.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/form.css}">
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext'
 	rel='stylesheet' type='text/css'>
@@ -32,6 +31,8 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
+<!--  <script type="text/javascript" src="/js/form.js"></script>
+  <script type="text/javascript" th:src="@{/js/form.js}"></script> -->
 
 <body>
 	<form th:action="@{/addoffer}" method="post"
@@ -102,11 +103,10 @@
 			<!-- VAT-->
 			<div class="d-flex flex-row justify-content-center">
 				<div class="form-group col-md-8">
-					<label for="vat">VAT [%]: </label> <input type="number" step=0.01 min=0 id="vat"
-						class="form-control" th:field="*{percentVAT}">
+					<label for="percentvat">VAT [%]: </label><input type="number" step=0.01 min=0 max=100 id="vat"
+						class="form-control" th:field="*{percentVAT}"> 
 				</div>
 			</div>
-
 
 			<!-- Szacowany czas prac-->
 			<div class="d-flex flex-row justify-content-center ">
@@ -122,8 +122,8 @@
 			<div class="d-flex flex-row justify-content-center">
 				<div class="form-group col-md-8 mb-20">
 					<label for="validFor">Oferta ważna przez: </label> <input
-						type="text" id="validFor" class="form-control"
-						  value="6 miesięcy" name="validFor">
+						type="text" id="validFor" class="form-control" value="6 miesięcy"
+						name="validFor">
 				</div>
 			</div>
 
@@ -131,7 +131,8 @@
 			<div class="d-flex flex-row justify-content-center">
 				<div class="form-group col-8 mb-20">
 					<label for="additionalInfo">Dodatkowe informacje: </label>
-					<textarea class="form-control mb-1" rows="5" id="additionalInfo" name="additionalInfo">Prace będą wykonywane przy wykorzystaniu technik alpinistycznych. Narzędzia oraz materiały do prowadzenia prac są po stronie wykonawcy. Zleceniodawca jest zobowiązany do zapewnienia dostępu do dachu (wyłaz), wody oraz energii elektrycznej (gniazdko 230 V)w trakcie wykonywania prac.</textarea>
+					<textarea class="form-control mb-1" rows="5" id="additionalInfo"
+						name="additionalInfo">Prace będą wykonywane przy wykorzystaniu technik alpinistycznych. Narzędzia oraz materiały do prowadzenia prac są po stronie wykonawcy. Zleceniodawca jest zobowiązany do zapewnienia dostępu do dachu (wyłaz), wody oraz energii elektrycznej (gniazdko 230 V)w trakcie wykonywania prac.</textarea>
 				</div>
 			</div>
 
@@ -142,17 +143,13 @@
 						multiple="multiple" accept="" class="form-control-file" id="file">
 				</div>
 			</div>
-			<button type="submit" class="btn GPAbutton">Zapisz i wyślij nr 1</button>
 
 			<!-- Przyciski na dole -->
 			<div class="d-flex flex-row justify-content-center mt-20 mb-20">
-					<button type="submit" class="btn GPAbutton">Zapisz i wyślij</button>
-					<button type="button" class="btn btn-default GPAbutton" th:href="@{/index.html}">>
-						Powrót
-					</button>
-			 </div>
+				<button type="submit" class="btn GPAbutton" >Zapisz i wyślij</button>
+				<a class="btn GPAbutton" href="/gpa" role="button">Powrót</a>
+			</div>
 		</div>
-
 	</form>
 </body>
 </html>
