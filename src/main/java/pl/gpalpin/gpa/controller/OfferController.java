@@ -17,7 +17,6 @@ import pl.gpalpin.gpa.service.OfferService;
 
 @Controller
 public class OfferController {
-
 	
 	 @Autowired private OfferService offerService;
 	 
