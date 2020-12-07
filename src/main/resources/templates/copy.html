@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Grupa Przedsiębiorstw Alpinistycznych</title>
+<meta name="author" content="Joanna Zdżalik">
+<meta name="description" content="GPA">
+<link rel="shortcut icon" th:href="@{images/favicons/favicon.ico}">
+<link rel="icon" sizes="16x16 32x32 64x64" th:href="@{images/favicons/favicon.ico}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/form.css}">
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext'
+	rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+	 <link th:rel="stylesheet" th:href="@{/assets/izitoast/css/iziToast.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+</head>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/assets/izitoast/js/iziToast.min.js}"></script>
+<script type="text/javascript" src="../static/js/form.js" th:src="@{/js/form.js}"></script> 
+
+
+<body>
+
+<!--  <div>
+    
+      <h2>Add new offer</h2>
+      <form action="#" th:action="@{/copy}" th:object="${offerToCreate}" method="post">
+        <fieldset>
+          <legend>Dodaj</legend>
+          <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+          </ul>
+          <div>
+            <label for="title">
+              <span >Title</span>
+            </label>
+            <input type="text" id="validFor" class="form-control" th:field="*{title}" />
+          </div>
+
+          <div>
+            <label>Zakres prac</label>
+            <table>
+              <thead>
+                <tr>
+                  <th >Task</th>
+                  <th >Name</th>
+                  <th >Price</th>
+                  <th>
+                    <button type="submit" name="addTask" >Add task</button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="task,taskStat : *{scopeOfWork}">
+                  <td th:text="${taskStat.count}">1</td>
+                 	<td>
+       					 <input type="text" th:field="*{scopeOfWork[__${taskStat.index}__].name}" />
+     			  	</td>
+     				<td>
+      					  <input type="text" th:field="*{scopeOfWork[__${taskStat.index}__].price}" />
+    				  </td>
+                  <td>
+                    <button type="submit" name="removeRow" th:value="${rowStat.index}" th:text="#{seedstarter.row.remove}">Remove row</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="submit">
+            <button type="submit" name="save" >Add Offer to db</button>    
+          </div>
+        
+        </fieldset>
+          
+      </form>
+        
+    </div> -->
+</body>
+</html>

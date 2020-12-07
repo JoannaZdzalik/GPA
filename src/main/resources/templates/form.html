@@ -9,31 +9,23 @@
 <link rel="shortcut icon" th:href="@{images/favicons/favicon.ico}">
 <link rel="icon" sizes="16x16 32x32 64x64"
 	th:href="@{images/favicons/favicon.ico}">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}">
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext'
 	rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
+<link th:rel="stylesheet"
+	th:href="@{/assets/izitoast/css/iziToast.css} " />
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css} " />
 </head>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-	crossorigin="anonymous"></script>
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	crossorigin="anonymous"></script>
-<!--  <script type="text/javascript" src="/js/form.js"></script>
-  <script type="text/javascript" th:src="@{/js/form.js}"></script> -->
-
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/assets/izitoast/js/iziToast.min.js}"></script>
+<script type="text/javascript" src="../static/js/form.js"
+	th:src="@{/js/form.js}"></script>
 <body>
 	<form th:action="@{/addoffer}" method="post"
 		th:object="${offerToCreate}">
@@ -49,7 +41,7 @@
 			</div>
 
 			<!-- Zakres prac-->
-			<div class="d-flex flex-row justify-content-center mt-20">
+			<!-- 	<div class="d-flex flex-row justify-content-center mt-20">
 				<div class="form-group col-8 mb-20">
 					<label for="price">Wyceniony zakres prac: </label>
 					<textarea class="form-control mb-1" rows="1"
@@ -60,29 +52,17 @@
 						<button type="button" class="btn GPAbutton">Dodaj</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
+
+
 
 			<!-- Tabela z wypunktowanym zakresem-->
-			<div class="d-flex flex-row justify-content-center ">
-				<table class="table table-sm" id="scopeOfWork">
+			<!-- <div class="d-flex flex-row justify-content-center " th:switch="${tasksInScope}">
+				<table class="table table-sm" id="scopeOfWork" th:case="*">
 					<tbody>
-						<tr>
-							<td class="col-8">adin. konsultacja z Nikodemem</td>
-							<td class="col-2">500 zł</td>
-							<td class="col-1">
-								<button type="button" class="btn blue">
-									<span class="material-icons">edit</span>
-								</button>
-							</td>
-							<td class="col-1">
-								<button type="button" class="btn red">
-									<span class="material-icons">close</span>
-								</button>
-							</td>
-						</tr>
-						<tr>
-							<td class="col-9">DWA. ogarnięcie tego totalnego syfu</td>
-							<td class="col-2">25 000 zł</td>
+						<tr th:each="task : ${tasksInScope}">
+							<td class="col-8" th:text="${task.name}"></td>
+							<td class="col-2" th:text="${task.price}"></td>
 							<td class="col-1">
 								<button type="button" class="btn blue">
 									<span class="material-icons">edit</span>
@@ -97,14 +77,15 @@
 					</tbody>
 					<caption>Całkowity koszt usługi:</caption>
 				</table>
-
-			</div>
+				<p th:text="${totalCost}">total cost</p>
+			</div> -->
 
 			<!-- VAT-->
 			<div class="d-flex flex-row justify-content-center">
 				<div class="form-group col-md-8">
-					<label for="percentvat">VAT [%]: </label><input type="number" step=0.01 min=0 max=100 id="vat"
-						class="form-control" th:field="*{percentVAT}"> 
+					<label for="percentVat">VAT [%]: </label><input type="number"
+						step=0.01 min=0 max=100 id="percentVAT" class="form-control"
+						th:field="*{percentVAT}">
 				</div>
 			</div>
 
@@ -112,7 +93,7 @@
 			<div class="d-flex flex-row justify-content-center ">
 				<div class="form-group col-md-8 mb-20">
 					<label for="duration">Szacowany czas prac: </label> <input
-						type="text" id="duration" class="form-control"
+						type="text" id="durationOfWork" class="form-control"
 						th:field="*{durationOfWork}"> <small
 						class="form-text text-muted">Np. 6 dni roboczych</small>
 				</div>
@@ -146,9 +127,12 @@
 
 			<!-- Przyciski na dole -->
 			<div class="d-flex flex-row justify-content-center mt-20 mb-20">
-				<button type="submit" class="btn GPAbutton" >Zapisz i wyślij</button>
+				<button type="submit" class="btn GPAbutton">Zapisz i
+					wyślij</button>
 				<a class="btn GPAbutton" href="/gpa" role="button">Powrót</a>
 			</div>
+
+
 		</div>
 	</form>
 </body>

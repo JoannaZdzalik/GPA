@@ -15,5 +15,10 @@ public class IndexController {
 	public String form() {
 		return "form";
 	}
+	
+//	@RequestMapping("/copy")
+//	public String copy() {
+//		return "copy";
+//	}
 
 }

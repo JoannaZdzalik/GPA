@@ -3,6 +3,8 @@ package pl.gpalpin.gpa.service;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import pl.gpalpin.gpa.dto.OfferDto;
 import pl.gpalpin.gpa.model.Offer;
 import pl.gpalpin.gpa.model.Task;
@@ -20,9 +22,17 @@ public class OfferService implements OfferServiceInterface {
 	@Autowired
 	private OfferRepository offerRepository;
 
+	public Offer addOffer(OfferDto offerDto) {
+		Offer offer = mapper.map(offerDto, Offer.class);
+		offer.setTotalCost(calculateTotalCost(offerDto.getScopeOfWork()));
+		offerRepository.save(offer);
+		System.out.println("Dodana oferta: "+ offer.toString());
+		return offer;
+	}
+
 	public Offer addOffer(OfferDto offerDto, List<TaskDto> taskDtos) {
 		Offer offer = mapper.map(offerDto, Offer.class);
-		offer.setScopeOfWork(mapTaskDtosToTasks(taskDtos, offer));
+		offer.setScopeOfWork(mapTaskDtosToTasks(taskDtos, offer)); //
 		// offer.setScopeOfWork(mapList(taskDtos));
 		offer.setTotalCost(calculateTotalCost(taskDtos));
 		offerRepository.save(offer);
@@ -56,13 +66,9 @@ public class OfferService implements OfferServiceInterface {
 		return sum;
 	}
 
-//    public List<Task> mapList(List<TaskDto> taskDtos){
-//    	List<Task> tasks = new ArrayList<>();
-//    	for (TaskDto taskDto : taskDtos) {
-//    		Task task = mapper.map(taskDto, Task.class);
-//    		tasks.add(task);
-//    	}
-//    	return tasks;
-//    }
+	/* 
+	 * public List<Task> mapList(List<TaskDto> taskDtos) { return taskDtos.stream()
+	 * .map(t -> mapper.map(t, Task.class)) .collect(Collectors.toList()); }
+	 */
 
 }

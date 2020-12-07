@@ -26,7 +26,7 @@ public class Offer implements Serializable{
 	@OneToMany(mappedBy = "offer", cascade = {CascadeType.ALL})
 	private List<Task> scopeOfWork;
 	
-	@Column(name="total_cost", nullable = false)
+	@Column(name="total_cost", nullable = false) 
 	private Long totalCost;
 	
 	@Column(name="additional_info", columnDefinition="TEXT")
@@ -40,6 +40,8 @@ public class Offer implements Serializable{
 	
 	@Column(name="percentvat")
 	private double percentVAT;
+	
+//	private List<BufferedImage> photos;
 
 	public Offer(String title, List<Task> scopeOfWork, Long totalCost, String additionalInfo, String validFor,
 			String durationOfWork, double percentVAT) {
@@ -53,8 +55,17 @@ public class Offer implements Serializable{
 		this.percentVAT = percentVAT;
 	}
 
+	@Override
+	public String toString() {
+		return "Offer [title=" + title + ", scopeOfWork=" + scopeOfWork + ", totalCost=" + totalCost
+				+ ", additionalInfo=" + additionalInfo + ", validFor=" + validFor + ", durationOfWork=" + durationOfWork
+				+ ", percentVAT=" + percentVAT + "]";
+	}
+	
+	
 
-//	private List<BufferedImage> photos;
+
+
 	
 	
 }

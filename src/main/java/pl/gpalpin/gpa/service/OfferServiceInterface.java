@@ -1,14 +1,15 @@
 package pl.gpalpin.gpa.service;
 
-import pl.gpalpin.gpa.dto.OfferDto;
-import pl.gpalpin.gpa.model.Offer;
-import pl.gpalpin.gpa.dto.TaskDto;
 import java.util.List;
 
-public interface OfferServiceInterface {
+import pl.gpalpin.gpa.dto.OfferDto;
+import pl.gpalpin.gpa.dto.TaskDto;
+import pl.gpalpin.gpa.model.Offer;
 
-	Offer addOffer(OfferDto offerDto, List<TaskDto> taskDtos);
+public interface OfferServiceInterface {
+	
+	Offer addOffer(OfferDto offerDto, List<TaskDto> taskDtos); //ta potem do usuniecia
+	Offer addOffer(OfferDto offerDto); //docelowa
 	boolean validateFields(OfferDto offerDto, List<TaskDto> tasksDto);
 	Long calculateTotalCost(List<TaskDto> taskDtos);
-	
 }

@@ -13,7 +13,7 @@ public class OfferDto {
 
 	private Long id;
 	private String title;
-	private List<Task> scopeOfWork;
+	private List<TaskDto> scopeOfWork;
 	private Long totalCost;
 	private String additionalInfo;
 	private String validFor;
@@ -22,7 +22,7 @@ public class OfferDto {
 //	private List<BufferedImage> photos;
 	
 	
-	public OfferDto(String title,List<Task> scopeOfWork, Long totalCost, String additionalInfo, String validFor,
+	public OfferDto(String title,List<TaskDto> scopeOfWork, Long totalCost, String additionalInfo, String validFor,
 			String durationOfWork, double percentVAT) {
 		super();
 		this.title = title;
