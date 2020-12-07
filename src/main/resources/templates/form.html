@@ -27,7 +27,7 @@
 <script type="text/javascript" src="../static/js/form.js"
 	th:src="@{/js/form.js}"></script>
 <body>
-	<form th:action="@{/addoffer}" method="post"
+	<form id="offerForm" th:action="@{/addoffer}" method="post"
 		th:object="${offerToCreate}">
 		<div class="container formBox">
 			<h3>Tworzenie oferty</h3>

@@ -7,14 +7,9 @@ $('document').ready(function() {
 	$('button[type="submit"]').click(function(event) {
 		event.preventDefault();
 
-	var offerToCreate = {'title': $('#title').val(),
-        			'validFor': $('#validFor').val(),
-        			'durationOfWork': $('#durationOfWork').val(),
-        			'additionalInfo': $('#additionalInfo').val(),
-        			'percentVAT': $('#percentVAT').val()}
+       var offerToCreate = $("#offerForm").serializeArray(); 		
 	
 		$.post("/gpa/addoffer", offerToCreate , function() {
-			console.log("Offer created: " + JSON.stringify(offerToCreate));
 			iziToast.show({
 				title: 'Sukces',
 				message: 'Oferta została dodana pomyślnie.',
