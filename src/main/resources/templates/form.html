@@ -18,25 +18,26 @@
 <link th:rel="stylesheet"
 	th:href="@{/assets/izitoast/css/iziToast.css} " />
 <link th:rel="stylesheet"
-	th:href="@{/libs/bootstrap/css/bootstrap.min.css} " />
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css} " />
 </head>
-<script th:src="@{/libs/jquery/jquery.min.js}"></script>
-<script th:src="@{/libs/popper.js/umd/popper.min.js}"></script>
-<script th:src="@{/libs/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 <script th:src="@{/assets/izitoast/js/iziToast.min.js}"></script>
 <script type="text/javascript" src="../static/js/form.js"
 	th:src="@{/js/form.js}"></script>
+
 <body>
 	<form id="offerForm" th:action="@{/addoffer}" method="post"
 		th:object="${offerToCreate}">
-		<div class="container formBox">
-			<h3>Tworzenie oferty</h3>
+		<div class="container formBox">		
+<h3>Tworzenie oferty</h3>
 			<!--Tytuł -->
 			<div class="d-flex flex-row justify-content-center">
 				<div class="form-group col-md-8 mb-20">
 					<label for="title">Tytuł oferty: </label> <input type="text"
 						id="title" class="form-control" placeholder="Wprowadź tytuł..."
-						th:field="*{title}" th:required="required">
+						th:field="*{title}" >
 				</div>
 			</div>
 

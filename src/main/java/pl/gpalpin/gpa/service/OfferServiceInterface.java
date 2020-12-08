@@ -8,8 +8,8 @@ import pl.gpalpin.gpa.model.Offer;
 
 public interface OfferServiceInterface {
 	
-	Offer addOffer(OfferDto offerDto, List<TaskDto> taskDtos); //ta potem do usuniecia
+	String addOffer(OfferDto offerDto, List<TaskDto> taskDtos); //ta potem do usuniecia
 	Offer addOffer(OfferDto offerDto); //docelowa
-	boolean validateFields(OfferDto offerDto, List<TaskDto> tasksDto);
+	boolean isValid(OfferDto offerDto, List<TaskDto> tasksDto);
 	Long calculateTotalCost(List<TaskDto> taskDtos);
 }
