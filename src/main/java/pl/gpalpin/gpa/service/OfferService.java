@@ -3,6 +3,7 @@ package pl.gpalpin.gpa.service;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import pl.gpalpin.gpa.dto.OfferDto;
 import pl.gpalpin.gpa.model.Offer;
@@ -16,17 +17,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class OfferService implements OfferServiceInterface {
 
 	@Autowired
-	private ModelMapper mapper;
+	ModelMapper mapper;
 
 	@Autowired
 	private OfferRepository offerRepository;
 
-	public Offer addOffer(OfferDto offerDto) {
-		Offer offer = mapper.map(offerDto, Offer.class);
-		offer.setTotalCost(calculateTotalCost(offerDto.getScopeOfWork()));
-		offerRepository.save(offer);
-		System.out.println("Dodana oferta: " + offer.toString());
-		return offer;
+	public String addOffer(OfferDto offerDto) {
+		if (offerDto.getTitle() == null || offerDto.getTitle() == "") {
+			return "Pole 'tytuł' nie może pozostać puste.";
+		} else if (offerDto.getScopeOfWork() == null || offerDto.getScopeOfWork().isEmpty()) {
+			return "Nie określono zakresu prac.";
+		} else {
+			Offer offer = new Offer();
+			offer.setScopeOfWork(mapList(offerDto.getScopeOfWork()));
+			offer = mapper.map(offerDto, Offer.class);
+			offer.setTotalCost(calculateTotalCost(offerDto.getScopeOfWork()));
+			try {
+				offerRepository.save(offer);
+				return "Oferta zapisana pomyślnie.";
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return "Coś zostało zle wypełnione";
 	}
 
 	public String addOffer(OfferDto offerDto, List<TaskDto> taskDtos) {
@@ -55,6 +68,13 @@ public class OfferService implements OfferServiceInterface {
 		return true;
 	}
 	
+	public boolean isValid(OfferDto offerDto) {
+		if (offerDto.getTitle() == null || offerDto.getTitle() == "" ||  offerDto.getScopeOfWork() == null || offerDto.getScopeOfWork().isEmpty()) {
+			return false;
+		}
+		return true;
+	}
+
 	public List<Task> mapTaskDtosToTasks(List<TaskDto> taskDtos, Offer offer) {
 		List<Task> tasks = new ArrayList<>();
 		for (TaskDto taskDto : taskDtos) {
@@ -75,9 +95,10 @@ public class OfferService implements OfferServiceInterface {
 		return sum;
 	}
 
-	/*
-	 * public List<Task> mapList(List<TaskDto> taskDtos) { return taskDtos.stream()
-	 * .map(t -> mapper.map(t, Task.class)) .collect(Collectors.toList()); }
-	 */
+
+	  public List<Task> mapList(List<TaskDto> taskDtos) { 
+		  return taskDtos.stream()
+	  .map(t -> mapper.map(t, Task.class)) .collect(Collectors.toList()); }
+	 
 
 }
