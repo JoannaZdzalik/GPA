@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,7 +37,7 @@ public class OfferServiceTest {
 		offerService = new OfferService();
 	}
 	
-	@Test //only working with jupiter
+	@Test
 	public void shouldCreateOfferWithAllValidParameters() {
 		OfferDto offerDto = new OfferDto("Oferta na prace wysokosciowe",taskDtos,280L, "Dostęp do klucza", "12 miesięcy", "7 dni roboczych", 8.5);
 		Assert.assertEquals("Oferta zapisana pomyślnie.", offerService.addOffer(offerDto));

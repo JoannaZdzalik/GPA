@@ -4,6 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import pl.gpalpin.gpa.service.OfferService;
+
 @Configuration
 public class SpringConfig {
 
@@ -11,4 +13,6 @@ public class SpringConfig {
     public ModelMapper mapper() {
         return new ModelMapper();
     }
+    
+
 }

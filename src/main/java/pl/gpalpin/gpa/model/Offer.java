@@ -26,7 +26,7 @@ public class Offer implements Serializable{
 	@OneToMany(mappedBy = "offer", cascade = {CascadeType.ALL})
 	private List<Task> scopeOfWork;
 	
-	@Column(name="total_cost", nullable = false) 
+	@Column(name="total_cost") //nullable=false
 	private Long totalCost;
 	
 	@Column(name="additional_info", columnDefinition="TEXT")

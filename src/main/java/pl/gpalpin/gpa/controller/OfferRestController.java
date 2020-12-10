@@ -4,20 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import pl.gpalpin.gpa.dto.OfferDto;
 import pl.gpalpin.gpa.dto.TaskDto;
 import pl.gpalpin.gpa.service.OfferService;
 
 @RestController
-//@RequestMapping("addoffer")
 public class OfferRestController {
 
 	@Autowired
@@ -36,6 +34,6 @@ public class OfferRestController {
 		String status = offerService.addOffer(offerDto, taskDtos);
 		boolean valid = offerService.isValid(offerDto, taskDtos);
 
-		return valid ? ResponseEntity.ok(status) : ResponseEntity.badRequest().body(status);
+		return valid ? ResponseEntity.ok().body(status) : ResponseEntity.badRequest().body(status);
 	}
 }
