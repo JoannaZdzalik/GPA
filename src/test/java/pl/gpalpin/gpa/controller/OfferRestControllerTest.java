@@ -1,6 +1,5 @@
 package pl.gpalpin.gpa.controller;
 
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -10,8 +9,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +32,8 @@ import pl.gpalpin.gpa.service.OfferService;
 import static com.jayway.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//@SpringBootTest
+//@AutoConfigureMockMvc
 @WebMvcTest(controllers = OfferRestController.class)
 public class OfferRestControllerTest {
 
@@ -60,7 +59,7 @@ public class OfferRestControllerTest {
 	}
 
 	@Test
-	public void whenOfferDtoCorrect_responseHttpStatus201() throws Exception { 
+	public void whenOfferDtoCorrect_responseHttpStatus200() throws Exception { 
 		given()
 		.formParams("title", "testtitle", "totalCost", 220, "additionalInfo", "Keys needed",
 				"validFor", "12 miesiecy", "durationOfWork", "2tygodnie", "percentVAT", 8.5)

@@ -17,7 +17,7 @@ public class IndexControllerTest {
 	private MockMvc mockMvc;
 	
 	@Test
-	public void shouldReturnStatusOKAnDView() throws Exception {
+	public void shouldReturnStatusOKAndView() throws Exception {
 		this.mockMvc.perform(get("/index"))
 		.andDo(print())
 		.andExpect(status().isOk())

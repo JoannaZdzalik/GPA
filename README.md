@@ -10,3 +10,7 @@ Technologies used:
 -Apache Tomcat server
 -jQuery
 -HTML + CSS
+
+Testing (unit tests, integration tests):
+-jUnit
+-Spring MockMVC
