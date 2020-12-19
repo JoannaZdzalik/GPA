@@ -4,7 +4,6 @@ import java.util.List;
 
 import pl.gpalpin.gpa.dto.OfferDto;
 import pl.gpalpin.gpa.dto.TaskDto;
-import pl.gpalpin.gpa.model.Offer;
 
 public interface OfferServiceInterface {
 	

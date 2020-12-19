@@ -16,15 +16,15 @@ import pl.gpalpin.gpa.controller.OfferRestController;
 @DirtiesContext(classMode = ClassMode.BEFORE_EACH_TEST_METHOD)
 class GpaApplicationTests {
 
-	/*
-	 * @Autowired private IndexController indexcontroller;
-	 * 
-	 * @Autowired private OfferRestController offercontroller;
-	 * 
-	 * @Test public void contextLoads() throws Exception {
-	 * assertThat(indexcontroller).isNotNull();
-	 * assertThat(offercontroller).isNotNull(); }
-	 */
+	
+	  @Autowired private IndexController indexcontroller;
+	  
+	  @Autowired private OfferRestController offercontroller;
+	  
+	  @Test public void contextLoads() throws Exception {
+	  assertThat(indexcontroller).isNotNull();
+	  assertThat(offercontroller).isNotNull(); }
+	 
 	
 
 

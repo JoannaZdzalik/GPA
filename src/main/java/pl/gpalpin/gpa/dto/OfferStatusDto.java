@@ -1,9 +1,5 @@
 package pl.gpalpin.gpa.dto;
 
-import java.util.List;
-
-import org.springframework.http.ResponseEntity;
-
 import lombok.*;
 
 @Getter

@@ -1,14 +1,11 @@
 package pl.gpalpin.gpa.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,15 +37,12 @@ public class OfferRestController {
 		String status = offerService.addOffer(offerDto); // taskDtos
 		boolean valid = offerService.isValid(offerDto); //taskDtos
 		if (valid == true) {
-			 response.setStatus(200);
-			return new OfferStatusDto(offerDto,status);
+			response.setStatus(200);
 		} else {
 			 response.setStatus(400);
-			return new OfferStatusDto(offerDto,status);
 		}
+		return new OfferStatusDto(offerDto,status);
 	}
-
-
 
 //	@PostMapping("/addoffer")
 //	public ResponseEntity<String> addOffer(@ModelAttribute OfferDto offerDto) { //a jakby zwracalo obiekt ze statusem a nie status?
