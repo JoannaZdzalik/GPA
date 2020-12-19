@@ -12,7 +12,7 @@ public class IndexController {
 		return "index";
 	}
 
-//	@RequestMapping("/form") 
+//	@GetMapping("/form") 
 //	public String form() {
 //		return "form";
 //	}

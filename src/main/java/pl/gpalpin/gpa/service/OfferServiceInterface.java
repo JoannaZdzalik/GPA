@@ -10,7 +10,6 @@ public interface OfferServiceInterface {
 	
 	String addOffer(OfferDto offerDto, List<TaskDto> taskDtos); //ta potem do usuniecia
 	String addOffer(OfferDto offerDto); //docelowa
-	boolean isValid(OfferDto offerDto, List<TaskDto> tasksDto);
 	boolean isValid(OfferDto offerDto); //docelowe
 	Long calculateTotalCost(List<TaskDto> taskDtos);
 }

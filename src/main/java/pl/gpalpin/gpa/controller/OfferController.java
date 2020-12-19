@@ -19,19 +19,19 @@ import pl.gpalpin.gpa.service.OfferService;
 @Controller
 public class OfferController {
 	
-	/*
-	 * @Autowired private OfferService offerService;
-	 * 
-	 * @GetMapping("/form") public String mainPage(Model model) {
-	 * model.addAttribute("offerToCreate", new OfferDto()); return "form"; }
-	 * 
-	 * 
-	 * @PostMapping("/addoffer") public String addOffer(@ModelAttribute OfferDto
-	 * offerDto) { List<TaskDto> taskDtos = new ArrayList<>(); taskDtos.add(new
-	 * TaskDto("Montaz abc", 200L)); taskDtos.add(new TaskDto("Usuniecie xyz",50L));
-	 * taskDtos.add(new TaskDto("uszczelnienie nwm", 30L));
-	 * offerService.addOffer(offerDto, taskDtos); return "redirect:/form"; }
-	 */
+	
+//	  @Autowired private OfferService offerService;
+//	
+//	 @GetMapping("/form") public String mainPage(Model model) {
+//	  model.addAttribute("offerToCreate", new OfferDto()); return "form"; }
+//	  
+//	 
+//	  @PostMapping("/addoffer") public String addOffer(@ModelAttribute OfferDto
+//	  offerDto) { List<TaskDto> taskDtos = new ArrayList<>(); taskDtos.add(new
+//	  TaskDto("Montaz abc", 200L)); taskDtos.add(new TaskDto("Usuniecie xyz",50L));
+//	  taskDtos.add(new TaskDto("uszczelnienie nwm", 30L));
+//	  offerService.addOffer(offerDto, taskDtos); return "redirect:/form"; }
+	 
 	  
 //	  @RequestMapping(value="/form", params={"addTask"}) 
 	 //public String addTask(final OfferDto offerDto) { 

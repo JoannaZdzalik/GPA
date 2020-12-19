@@ -41,6 +41,8 @@ public class OfferService implements OfferServiceInterface {
 		}
 		return "Coś zostało zle wypełnione";
 	}
+	
+
 
 	public String addOffer(OfferDto offerDto, List<TaskDto> taskDtos) {
 		if (offerDto.getTitle() == null || offerDto.getTitle() == "") {
@@ -61,13 +63,6 @@ public class OfferService implements OfferServiceInterface {
 		return "Coś zostało zle wypełnione";
 	}
 
-	public boolean isValid(OfferDto offerDto, List<TaskDto> tasksDto) {
-		if (offerDto.getTitle() == null || offerDto.getTitle() == "" || tasksDto.isEmpty() || tasksDto == null) {
-			return false;
-		}
-		return true;
-	}
-	
 	public boolean isValid(OfferDto offerDto) {
 		if (offerDto.getTitle() == null || offerDto.getTitle() == "" ||  offerDto.getScopeOfWork() == null || offerDto.getScopeOfWork().isEmpty()) {
 			return false;
