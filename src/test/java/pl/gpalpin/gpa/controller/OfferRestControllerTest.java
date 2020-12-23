@@ -89,25 +89,25 @@ public class OfferRestControllerTest {
 		//dodac asercje na scopeOfWork gdy juz go ogarne
 	}
 
-	@Test
-	public void responseBadRequestWhenNoTitle() {
-		given()
-        .formParams("title","", "totalCost", 220,"additionalInfo", "someinfo","durationOfWork" ,"2tygodnie","percentVAT", 8.5)
-        .when()
-        .post("http://localhost:8080/gpa/addoffer")
-        .then()
-        .statusCode(400);
-	}
-
-	@Test
-	public void responseBadRequestWhenNullTitle() {
-		given()
-        .formParams("totalCost", 220,"additionalInfo", "12 miesiecy","durationOfWork" ,"2tygodnie","percentVAT", 8.5)
-        .when()
-        .post("http://localhost:8080/gpa/addoffer")
-        .then()
-        .statusCode(400);
-	}
+//	@Test
+//	public void responseBadRequestWhenNoTitle() {
+//		given()
+//        .formParams("title","", "totalCost", 220,"additionalInfo", "someinfo","durationOfWork" ,"2tygodnie","percentVAT", 8.5)
+//        .when()
+//        .post("http://localhost:8080/gpa/addoffer")
+//        .then()
+//        .statusCode(400);
+//	}
+//
+//	@Test
+//	public void responseBadRequestWhenNullTitle() {
+//		given()
+//        .formParams("totalCost", 220,"additionalInfo", "12 miesiecy","durationOfWork" ,"2tygodnie","percentVAT", 8.5)
+//        .when()
+//        .post("http://localhost:8080/gpa/addoffer")
+//        .then()
+//        .statusCode(400);
+//	}
 	
 //	@Test
 //	public void responseBadRequestWhenNoScopeOfWork() {}

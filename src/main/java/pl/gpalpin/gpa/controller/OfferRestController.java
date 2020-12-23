@@ -34,13 +34,13 @@ public class OfferRestController {
 		taskDtos.add(new TaskDto("Usuniecie xyz", 50L));
 		taskDtos.add(new TaskDto("uszczelnienie nwm", 30L));
 		offerDto.setScopeOfWork(taskDtos);
-		String status = offerService.addOffer(offerDto); // taskDtos
 		boolean valid = offerService.isValid(offerDto); //taskDtos
 		if (valid == true) {
 			response.setStatus(200);
 		} else {
 			 response.setStatus(400);
 		}
+		String status = offerService.addOffer(offerDto); // taskDtos
 		return new OfferStatusDto(offerDto,status);
 	}
 

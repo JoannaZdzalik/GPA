@@ -44,8 +44,15 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
-   -webkit-appearance: none;
-    display: none;
+  -webkit-input-placeholder : none !important
+  
+}
+
+input::-webkit-input-placeholder{
+    color:red;
+}
+input:-moz-placeholder {
+    color:red;
 }
 
 .red {

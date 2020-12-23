@@ -21,6 +21,9 @@ public class OfferService implements OfferServiceInterface {
 
 	@Autowired
 	private OfferRepository offerRepository;
+	
+	@Autowired
+	private PdfService pdfService;
 
 	public String addOffer(OfferDto offerDto) {
 		if (offerDto.getTitle() == null || offerDto.getTitle() == "") {
@@ -34,6 +37,9 @@ public class OfferService implements OfferServiceInterface {
 			offer.setTotalCost(calculateTotalCost(offerDto.getScopeOfWork()));
 			try {
 				offerRepository.save(offer);
+				//PdfService pdfService = new PdfService();
+			        String html = pdfService.parseThymeleafTemplate();
+			        pdfService.generatePdfFromHtml(html);
 				return "Oferta zapisana pomyślnie.";
 			} catch (Exception e) {
 				e.printStackTrace();
